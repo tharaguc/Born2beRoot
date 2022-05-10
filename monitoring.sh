@@ -22,7 +22,7 @@ TCP_CNCT=`ss -s | grep "TCP:" | awk '{print$4}' | tr -d ','`
 USER_LOG=`who --count | grep "users" | tr '=' ' ' | awk '{print$3}'`
 IP=`hostname -I`
 MAC=`ip addr | grep "link/ether" | awk '{print$2}'`
-SUDO=`sudo sudoreplay -l | wc -l`
+SUDO=`grep "COMMAND" /var/log/sudo.log | wc -l`
 
 wall\
        	"\
